@@ -41,7 +41,7 @@
                             <span>ALAT MUSIK BERKUALITAS</span>
                             <h2>TERBAIK DI KELASNYA <br />100% Original</h2>
                             <p>Gratis Pengiriman di daerah Bandung dan sekitarnya.</p>
-                            <a href="#" class="primary-btn">BELANJA</a>
+                            <a href="/shop" class="primary-btn">BELANJA</a>
                         </div>
                     </div>
                 </div>

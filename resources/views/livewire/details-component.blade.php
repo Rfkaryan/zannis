@@ -6,20 +6,20 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>All departments</span>
+                            <span>Katalog Alat Musik</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit & Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter & Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya & Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            <li><a href="#">Gitar Akustik</a></li>
+                            <li><a href="#">Guitar Elektrik</a></li>
+                            <li><a href="#">Biola & Violin</a></li>
+                            <li><a href="#">Bass</a></li>
+                            <li><a href="#">Ukulele</a></li>
+                            <li><a href="#">Drum</a></li>
+                            <li><a href="#">Keyboard & Piano</a></li>
+                            <li><a href="#">Saksofon</a></li>
+                            <li><a href="#">Suling</a></li>
+                            <li><a href="#">Harmonika</a></li>
+                            <li><a href="#">Aksesoris Musik</a></li>
                         </ul>
                     </div>
                 </div>
@@ -28,21 +28,12 @@
                         <div class="hero__search__form">
                             <form action="#">
                                 <div class="hero__search__categories">
-                                    All Categories
+                                    Kategori
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input type="text" placeholder="What do yo u need?">
-                                <button type="submit" class="site-btn">SEARCH</button>
+                                <input type="text" placeholder="Apa yang kamu butuhkan?">
+                                <button type="submit" class="site-btn">CARI</button>
                             </form>
-                        </div>
-                        <div class="hero__search__phone">
-                            <div class="hero__search__phone__icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="hero__search__phone__text">
-                                <h5>+65 11.188.888</h5>
-                                <span>support 24/7 time</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,7 +41,7 @@
         </div>
     </section>
 
-    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+    <section class="breadcrumb-section set-bg" data-setbg="{{asset('assets/img/breadcrumb.jpg')}}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -74,17 +65,17 @@
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="img/product/details/product-details-1.jpg" alt="">
+                                src="{{asset('assets/img/product/details/product-details-1.jpg')}}" alt="">
                         </div>
                         <div class="product__details__pic__slider owl-carousel">
-                            <img data-imgbigurl="img/product/details/product-details-2.jpg"
-                                src="img/product/details/thumb-1.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-3.jpg"
-                                src="img/product/details/thumb-2.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-5.jpg"
-                                src="img/product/details/thumb-3.jpg" alt="">
-                            <img data-imgbigurl="img/product/details/product-details-4.jpg"
-                                src="img/product/details/thumb-4.jpg" alt="">
+                            <img data-imgbigurl="{{asset('assets/img/product/details/product-details-2.jpg')}}"
+                                src="{{asset('assets/img/product/details/thumb-1.jpg')}}" alt="">
+                            <img data-imgbigurl="{{asset('assets/img/product/details/product-details-3.jpg')}}"
+                                src="{{asset('assets/img/product/details/thumb-2.jpg')}}" alt="">
+                            <img data-imgbigurl="{{asset('assets/img/product/details/product-details-5.jpg')}}"
+                                src="{{asset('assets/img/product/details/thumb-3.jpg')}}" alt="">
+                            <img data-imgbigurl="{{asset('assets/img/product/details/product-details-4.jpg')}}"
+                                src="{{asset('assets/img/product/details/thumb-4.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -223,7 +214,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('assets/img/product/product-1.jpg')}}">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -238,7 +229,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('assets/img/product/product-2.jpg')}}">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -253,7 +244,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('assets/img/product/product-3.jpg')}}">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -268,7 +259,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
+                        <div class="product__item__pic set-bg" data-setbg="{{asset('assets/img/product/product-7.jpg')}}">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
