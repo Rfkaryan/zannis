@@ -63,6 +63,11 @@
                 <div class="col-lg-12">
                     <div class="shoping__cart__table">
                         <table>
+                            @if (Session::has('success_message'))
+                            <div class="alert alert-success">
+                                <strong>SUCCESS</strong> {{Session::get('success_message')}}
+                            </div>
+                            @endif
                             <thead>
                                 <tr>
                                     <th class="shoping__product">Produk</th>
@@ -72,82 +77,50 @@
                                     <th></th>
                                 </tr>
                             </thead>
+                            @if (Cart::count() > 0)
                             <tbody>
+                                @foreach (Cart::content() as $item)
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="{{ asset('assets/img/cart/cart.png')}}" alt="">
-                                        <h5>Gitar Elektrik - Yamaha</h5>
+                                        <img src="{{ asset('assets/img/product')}}/{{$item->model->image}}"
+                                            alt="{{$item->model->name}}" style="height: 101px; widht: 101px;">
+                                        <a href="{{route('product.details',['slug'=>$item->model->slug])}}">
+                                            <h5>{{$item->model->name}}</h5>
+                                        </a>
                                     </td>
                                     <td class="shoping__cart__price">
-                                        Rp.2.500.000
+                                        {{$item->regular_price}}
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <span class="dec qtybtn" wire:click.prevent="decreaseQuantity('{{$item->rowId}}')">-</span>
+                                                <input type="text" value="{{$item->qty}}">
+                                                <span class="inc qtybtn" wire:click.prevent="increaseQuantity('{{$item->rowId}}')">+</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="shoping__cart__total">
-                                        Rp.2.500.000
+                                        {{$item->subtotal}}
                                     </td>
                                     <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
+                                        <span class="icon_close" wire:click.prevent="destroy('{{$item->rowId}}')"></span>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="{{ asset('assets/img/cart/cart.png')}}" alt="">
-                                        <h5>Senar Gitar Elixir</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        Rp.500.000
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        Rp.1.000.000
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <img src="{{ asset('assets/img/cart/cart.png')}}" alt="">
-                                        <h5>Gitar Akustik - Gibson</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        Rp.1.500.000
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        Rp.1.500.000
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <span class="icon_close"></span>
-                                    </td>
-                                </tr>
+                                @endforeach
                             </tbody>
+                            @else
+                                <p>NO ITEM IN CART</p>
+                            @endif
                         </table>
+
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__btns">
-                        <a href="#" class="primary-btn cart-btn">LANJUTKAN BELANJA</a>
+                        <a href="/shop" class="primary-btn cart-btn">LANJUTKAN BELANJA</a>
                         <a href="#" class="primary-btn cart-btn cart-btn-right"><span class="icon_loading"></span>
                             PERBAHARUI</a>
                     </div>
@@ -167,9 +140,9 @@
                     <div class="shoping__checkout">
                         <h5>Total Keranjang</h5>
                         <ul>
-                            <li>Total Harga <span>Rp.5.000.000</span></li>
-                            <li>Discount <span>Rp.0</span></li>
-                            <li>Total <span>Rp.5.000.000</span></li>
+                            <li>Subtotal <span>Rp.{{Cart::subtotal()}}</span></li>
+                            <li>Ongkir <span>Rp.{{Cart::tax()}}</span></li>
+                            <li>Total <span>Rp.{{Cart::total()}}</span></li>
                         </ul>
                         <a href="/checkout" class="primary-btn">CHECKOUT</a>
                     </div>

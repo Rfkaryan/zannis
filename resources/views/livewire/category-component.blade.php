@@ -41,8 +41,8 @@
                     <div class="breadcrumb__text">
                         <h2>Zannis Store</h2>
                         <div class="breadcrumb__option">
-                            <a href="/">Produk Kategori</a>
-                            <span>{{$category_name}}</span>
+                            <a href="/">Beranda</a>
+                            <span>Belanja</span>
                         </div>
                     </div>
                 </div>
