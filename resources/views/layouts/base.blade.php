@@ -80,7 +80,7 @@
                     @csrf
 
                 </form>
-                <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
+                {{-- <li><a href="{{route('user.dashboard')}}">Dashboard</a></li> --}}
             </ul>
         </div>
         {{-- <div class="header__top__right__auth">
@@ -183,7 +183,7 @@
                                     @csrf
 
                                 </form>
-                                <li><a href="{{route('user.dashboard')}}">Dashboard</a></li>
+                                {{-- <li><a href="{{route('user.dashboard')}}">Dashboard</a></li> --}}
                             </ul>
                         </div>
                         {{-- <div class="header__top__right__auth">

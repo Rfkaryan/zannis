@@ -9,10 +9,17 @@
                             <span>Katalog Alat Musik</span>
                         </div>
                         <ul>
-                            @foreach ($collection as $item)
-                            <li><a href="{{route('product.category',['category_slug'=>$category->slug])}}">{{$category->name}}</a></li>    
-                            @endforeach
-                            
+                            <li><a href="#">Gitar Akustik</a></li>
+                            <li><a href="#">Guitar Elektrik</a></li>
+                            <li><a href="#">Biola & Violin</a></li>
+                            <li><a href="#">Bass</a></li>
+                            <li><a href="#">Ukulele</a></li>
+                            <li><a href="#">Drum</a></li>
+                            <li><a href="#">Keyboard & Piano</a></li>
+                            <li><a href="#">Saksofon</a></li>
+                            <li><a href="#">Suling</a></li>
+                            <li><a href="#">Harmonika</a></li>
+                            <li><a href="#">Aksesoris Musik</a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,8 +48,8 @@
                     <div class="breadcrumb__text">
                         <h2>Zannis Store</h2>
                         <div class="breadcrumb__option">
-                            <a href="/">Produk Kategori</a>
-                            <span>{{$category_name}}</span>
+                            <a href="/">Beranda</a>
+                            <span>Belanja</span>
                         </div>
                     </div>
                 </div>
@@ -58,17 +65,11 @@
                         <div class="sidebar__item">
                             <h4>Kategori</h4>
                             <ul>
-                                <li><a href="#">Gitar Akustik</a></li>
-                                <li><a href="#">Guitar Elektrik</a></li>
-                                <li><a href="#">Biola & Violin</a></li>
-                                <li><a href="#">Bass</a></li>
-                                <li><a href="#">Ukulele</a></li>
-                                <li><a href="#">Drum</a></li>
-                                <li><a href="#">Keyboard & Piano</a></li>
-                                <li><a href="#">Saksofon</a></li>
-                                <li><a href="#">Suling</a></li>
-                                <li><a href="#">Harmonika</a></li>
-                                <li><a href="#">Aksesoris Musik</a></li>
+                                @foreach ($categories as $category)
+                                <li>
+                                    <a href="{{route('product.category',['category_slug'=>$category->slug])}}">{{$category->name}}</a>
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="sidebar__item">

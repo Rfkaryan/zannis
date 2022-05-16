@@ -9,10 +9,17 @@
                             <span>Katalog Alat Musik</span>
                         </div>
                         <ul>
-                            @foreach ($collection as $item)
-                            <li><a href="{{route('product.category',['category_slug'=>$category->slug])}}">{{$category->name}}</a></li>    
-                            @endforeach
-                            
+                            <li><a href="#">Gitar Akustik</a></li>
+                            <li><a href="#">Guitar Elektrik</a></li>
+                            <li><a href="#">Biola & Violin</a></li>
+                            <li><a href="#">Bass</a></li>
+                            <li><a href="#">Ukulele</a></li>
+                            <li><a href="#">Drum</a></li>
+                            <li><a href="#">Keyboard & Piano</a></li>
+                            <li><a href="#">Saksofon</a></li>
+                            <li><a href="#">Suling</a></li>
+                            <li><a href="#">Harmonika</a></li>
+                            <li><a href="#">Aksesoris Musik</a></li>
                         </ul>
                     </div>
                 </div>
@@ -41,8 +48,8 @@
                     <div class="breadcrumb__text">
                         <h2>Zannis Store</h2>
                         <div class="breadcrumb__option">
-                            <a href="/">Beranda</a>
-                            <span>Belanja</span>
+                            <a href="/shop">Belanja</a>
+                            <span>{{$category_name}}</span>
                         </div>
                     </div>
                 </div>
@@ -58,17 +65,11 @@
                         <div class="sidebar__item">
                             <h4>Kategori</h4>
                             <ul>
-                                <li><a href="#">Gitar Akustik</a></li>
-                                <li><a href="#">Guitar Elektrik</a></li>
-                                <li><a href="#">Biola & Violin</a></li>
-                                <li><a href="#">Bass</a></li>
-                                <li><a href="#">Ukulele</a></li>
-                                <li><a href="#">Drum</a></li>
-                                <li><a href="#">Keyboard & Piano</a></li>
-                                <li><a href="#">Saksofon</a></li>
-                                <li><a href="#">Suling</a></li>
-                                <li><a href="#">Harmonika</a></li>
-                                <li><a href="#">Aksesoris Musik</a></li>
+                                @foreach ($categories as $category)
+                                <li><a
+                                        href="{{route('product.category',['category_slug'=>$category->slug])}}">{{$category->name}}</a>
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="sidebar__item">
@@ -367,25 +368,31 @@
                         </div>
                     </div>
                     <div class="row">
-                    
-                    @foreach ($products as $product)
+
+                        @foreach ($products as $product)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="{{ asset('assets/img/product/')}}/{{$product->image}}" alt="{{$product->name}}">
-                                        <ul class="product__item__pic__hover">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                            <li><a href="#" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
+                                <div class="product__item__pic set-bg"
+                                    data-setbg="{{ asset('assets/img/product/')}}/{{$product->image}}"
+                                    alt="{{$product->name}}">
+                                    <ul class="product__item__pic__hover">
+                                        <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                        <li><a href="#"
+                                                wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}})"><i
+                                                    class="fa fa-shopping-cart"></i></a></li>
+                                    </ul>
+                                </div>
                                 <div class="product__item__text">
-                                    <h6><a href="{{route('product.details',['slug'=>$product->slug])}}">{{$product->name}}</a></h6>
+                                    <h6><a
+                                            href="{{route('product.details',['slug'=>$product->slug])}}">{{$product->name}}</a>
+                                    </h6>
                                     <h5>{{$product->regular_price}}</h5>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                       
+                        @endforeach
+
                     </div>
                     <div class="product__pagination">
                         <a href="#">1</a>
