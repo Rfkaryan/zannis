@@ -1,6 +1,15 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+    <style>
+        nav svg{
+            height: 20px;
+        }
+        nav .hidden{
+            display: block !important;
+        }
+    </style>
+
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Pengaturan Kategori</h1>
     <p class="mb-4">Menampilkan serta menambahkan suatu Kategori produk kedalam web.</p>
@@ -44,6 +53,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{$categories->links()}}
             </div>
         </div>
     </div>
